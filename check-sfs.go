@@ -53,7 +53,7 @@ func checkSFSBlacklist(x Submission) (PluginResult, string) {
 	//
 	// The URL we'll fetch
 	//
-	url := fmt.Sprintf("http://www.stopforumspam.com/api?ip=%s", x.IP)
+	url := fmt.Sprintf("https://www.stopforumspam.com/api?ip=%s", x.IP)
 
 	//
 	// Make the request
