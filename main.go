@@ -859,7 +859,7 @@ func main() {
 	//
 	// Open our logfile for ham
 	//
-	hamLog, err := os.OpenFile("/tmp/ham.log",
+	hamLog, err := os.OpenFile("/var/tmp/ham.log",
 		os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
 	if err != nil {
 		fmt.Printf("Error opening file: %v", err)
