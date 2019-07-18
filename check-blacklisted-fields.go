@@ -77,7 +77,7 @@ func init() {
 	// Look for a set of field-based config-files.
 	//
 	processDirectory("./blacklist.d/")
-	processDirectory("/etc/blogspam/blacklist.d/")
+	processDirectory("/opt/local/etc/blogspam/blacklist.d/")
 
 	registerPlugin(BlogspamPlugin{Name: "05-blacklisted-fields.js",
 		Description: "Look for blacklisted patterns in fields",
