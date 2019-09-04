@@ -117,15 +117,20 @@ func checkBlacklistedFields(x Submission) (PluginResult, string) {
 		for _, val := range items {
 
 			//
-			// Each item is a regular expression.
+			// Ensure value of the field is not empty
 			//
-			// We make them case-insensitive with the "(?i)" prefix
-			//
-			re := regexp.MustCompile("(?i)" + val)
-			match := re.FindStringSubmatch(fieldVal)
+			if len(fieldVal) > 0 {
+				//
+				// Each item is a regular expression.
+				//
+				// We make them case-insensitive with the "(?i)" prefix
+				//
+				re := regexp.MustCompile("(?i)" + val)
+				match := re.FindStringSubmatch(fieldVal)
 
-			if len(match) > 0 {
-				return Spam, fmt.Sprintf("Blacklisted value in %s-field", fieldName)
+				if len(match) > 0 {
+					return Spam, fmt.Sprintf("Blacklisted value in %s-field", fieldName)
+				}
 			}
 
 		}
